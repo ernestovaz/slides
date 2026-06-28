@@ -1,0 +1,6 @@
+# Generated slide outputs
+**/*.html
+**/*.pdf
+**/*.pptx
+**/*.png
+**/*.jpeg

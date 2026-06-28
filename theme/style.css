@@ -1,0 +1,432 @@
+/* @theme masters-research */
+
+@import 'default';
+
+:root {
+  --color-primary: #2563eb;
+  --color-secondary: #7c3aed;
+  --color-accent: #059669;
+  --color-bg: #fafafa;
+  --color-fg: #1e293b;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+}
+
+/* ─── Base Slide ─── */
+
+section {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 22px;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  padding: 30px 50px;
+  line-height: 1.4;
+}
+
+/* ─── Title Slides ─── */
+
+section.lead {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #f8fafc;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.lead h1 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 0.2em;
+  border: none;
+}
+
+section.lead h2 {
+  font-size: 1em;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+/* ─── Section Dividers ─── */
+
+section.divider {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+section.divider h1 {
+  font-size: 2.2em;
+  color: white;
+  border: none;
+}
+
+/* ─── Headings ─── */
+
+h1 {
+  color: var(--color-primary);
+  font-size: 1.35em;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.15em;
+  margin-bottom: 0.4em;
+  margin-top: 0;
+}
+
+h2 {
+  color: var(--color-secondary);
+  font-size: 1.05em;
+  font-weight: 600;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+h3 {
+  color: var(--color-accent);
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+/* ─── Text ─── */
+
+p {
+  margin: 0.3em 0;
+}
+
+ul, ol {
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 0.2em 0;
+  padding-left: 1.4em;
+}
+
+li {
+  margin-bottom: 0.15em;
+}
+
+li ul, li ol {
+  margin: 0.1em 0;
+}
+
+strong {
+  color: var(--color-primary);
+}
+
+em {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* ─── Code ─── */
+
+code {
+  background: #f1f5f9;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 0.05em 0.3em;
+  font-size: 0.82em;
+  color: #be185d;
+}
+
+pre {
+  background: #1e293b;
+  border-radius: 6px;
+  padding: 0.7em;
+  font-size: 0.6em;
+  margin: 0.3em 0;
+  line-height: 1.4;
+}
+
+pre code {
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  padding: 0;
+}
+
+/* ─── Tables ─── */
+
+table {
+  font-size: 0.72em;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.3em 0;
+}
+
+th {
+  background: var(--color-primary);
+  color: white;
+  padding: 0.35em 0.6em;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 0.3em 0.6em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+/* ─── Blockquotes ─── */
+
+blockquote {
+  border-left: 3px solid var(--color-accent);
+  background: #ecfdf5;
+  padding: 0.4em 0.8em;
+  margin: 0.3em 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 0.85em;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* ─── Header/Footer ─── */
+
+header {
+  font-size: 0.55em;
+  color: var(--color-muted);
+}
+
+footer {
+  font-size: 0.55em;
+  color: var(--color-muted);
+}
+
+section::after {
+  font-size: 0.55em;
+  color: var(--color-muted);
+}
+
+/* ─── Layout Helpers ─── */
+
+section.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0.6em;
+}
+
+section.split h1 {
+  grid-column: 1 / -1;
+}
+
+/* ─── References Slides ─── */
+
+section.references {
+  font-size: 0.55em;
+}
+
+section.references h1 {
+  font-size: 2.2em;
+}
+
+section.references table {
+  font-size: 1em;
+}
+
+section.references td,
+section.references th {
+  padding: 0.25em 0.5em;
+}
+
+/* ─── Markers ─── */
+
+.verified {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.claim {
+  color: var(--color-secondary);
+  font-style: italic;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Diagram Components
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  margin: 0.4em 0;
+  font-size: 0.8em;
+}
+
+.diagram-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+  margin: 0.4em 0;
+  font-size: 0.8em;
+}
+
+.box {
+  border: 2px solid var(--color-primary);
+  border-radius: 6px;
+  padding: 0.4em 0.7em;
+  text-align: center;
+  background: white;
+  font-weight: 500;
+}
+
+.box-accent {
+  border-color: var(--color-accent);
+  background: #ecfdf5;
+}
+
+.box-secondary {
+  border-color: var(--color-secondary);
+  background: #f5f3ff;
+}
+
+.box-dark {
+  border-color: #334155;
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+.box-muted {
+  border-color: var(--color-border);
+  background: #f8fafc;
+  color: var(--color-muted);
+}
+
+.box-group {
+  border: 2px dashed var(--color-border);
+  border-radius: 10px;
+  padding: 0.6em;
+  background: #f8fafc;
+}
+
+.box-group-label {
+  font-size: 0.75em;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3em;
+  font-weight: 600;
+}
+
+.arrow {
+  font-size: 1.2em;
+  color: var(--color-muted);
+  font-weight: bold;
+}
+
+.arrow-down {
+  font-size: 1.2em;
+  color: var(--color-muted);
+  font-weight: bold;
+  line-height: 1;
+}
+
+.label {
+  font-size: 0.75em;
+  color: var(--color-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Architecture container */
+.arch {
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.7em;
+  background: white;
+  margin: 0.3em 0;
+}
+
+.arch-title {
+  font-size: 0.7em;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Grid layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5em;
+}
+
+.grid-row {
+  display: flex;
+  gap: 0.4em;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Flow (horizontal pipeline) */
+.flow {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flow-item {
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  padding: 0.3em 0.6em;
+  background: white;
+  font-size: 0.85em;
+  text-align: center;
+}
+
+/* Nested architecture */
+.nested {
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.5em;
+  margin: 0.2em 0;
+}
+
+.nested-label {
+  font-size: 0.7em;
+  color: var(--color-muted);
+  margin-bottom: 0.2em;
+}
+
+/* Separator line */
+.divider-line {
+  border-top: 2px dashed var(--color-secondary);
+  margin: 0.4em 0;
+  position: relative;
+}
+
+.divider-line::after {
+  content: attr(data-label);
+  position: absolute;
+  top: -0.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg);
+  padding: 0 0.4em;
+  font-size: 0.7em;
+  color: var(--color-secondary);
+  font-weight: 600;
+}
