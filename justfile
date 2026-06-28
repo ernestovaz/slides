@@ -1,9 +1,7 @@
 # Marp slide deck build system
-# Shared between both research idea presentations
-# Requires: marp-cli (npm install -g @marp-team/marp-cli)
+# Requires: marp-cli (npm install -g @marp-team/marp-cli) — see `just setup`
+# Shared options live in .marprc.yml.
 
-theme_dir := "theme"
-theme_css := theme_dir / "style.css"
 port := env("PORT", "8080")
 
 # Default: show available commands
@@ -14,37 +12,27 @@ default:
 
 # Serve all presentations with live-reload (browse at localhost:8080)
 serve:
-    marp -I . \
-        --theme {{theme_css}} \
-        --html \
-        --watch \
-        --server \
-        --server-port {{port}}
+    marp -I . --watch --server --server-port {​{port}}
 
 # ─── Build ───────────────────────────────────────────────────────
 
-# Build all slide decks (HTML + PDF)
-build:
-    marp -I . \
-        --theme {{theme_css}} \
-        --html
-    marp -I . \
-        --theme {{theme_css}} \
-        --html \
-        --pdf
+# Build HTML + PDF for all decks (and the index)
+build: html pdf
 
-# Build HTML only (faster, no PDF/browser dependency)
+# Build HTML only (fast, no browser needed)
 html:
-    marp -I . \
-        --theme {{theme_css}} \
-        --html
+    marp index.md '**/slides.md'
+
+# Build PDF (requires Chromium-based browser installed)
+pdf:
+    marp index.md '**/slides.md' --pdf
 
 # ─── Utilities ───────────────────────────────────────────────────
 
-# Clean generated files
+# Remove generated files
 clean:
-    rm -f security-wasm-filtering/slides.html security-wasm-filtering/slides.pdf
-    rm -f ebpf-host-profiling/slides.html ebpf-host-profiling/slides.pdf
+    find . \( -name 'slides.html' -o -name 'slides.pdf' -o -name 'index.html' -o -name 'index.pdf' \) \
+        -not -path './node_modules/*' -delete
 
 # Install marp-cli if not present
 setup:
